@@ -1,0 +1,24 @@
+// File Generated from Z3PY file Test_1000variables.py
+
+NotSat, 5,
+ 
+NotSat, 6,
+ 
+NotSat, 7,
+ 
+NotSat, 8,
+ 
+NotSat, 9,
+ 
+NotSat, 10,
+ 
+NotSat, 11,
+ 
+NotSat, 12,
+ 
+NotSat, 13,
+ 
+NotSat, 14,
+ 
+NotSat, 15,
+ 
