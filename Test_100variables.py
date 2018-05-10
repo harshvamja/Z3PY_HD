@@ -1,5 +1,11 @@
 #!/usr/local/bin/python3
 
+# ABOUT: This code tries to find state encodings for a finite state automata that satisfy a bunch of Hamming Distance & equality constraints. 
+# [s_0 to s_100] are BitVec() variables we try to solve for.
+# We increase BitVec() length from 5-bits to 15-bits in each iteration of the for loop and exit when a satisfiable solution is found.
+# For output we print at what Bit-length a satisfiable solution was found, and print the model.
+
+
 from z3 import *
 from math import *
 import sys
@@ -18,7 +24,8 @@ with open("OUTPUT_Test_100variables.txt",'w',1) as outfile:
 
 	out_line = ("// File Generated from Z3PY file Test_100variables.py")
 	outfile.write(out_line+"\n\n")
-
+	
+	# For loop incrementally checks at what bit-length [between 5 to 15 bits] a solution is found. It exists when the a solution is found, giving the minimum encoding bit-length required to meet all the constraints & the model gives encoding values for variables s_0 to s_100.
 	for bits in range(5, 16):
 		s_0, s_1, s_2, s_3, s_4, s_5, s_6, s_7, s_8, s_9, s_10, s_11, s_12, s_13, s_14, s_15, s_16, s_17, s_18, s_19, s_20, s_21, s_22, s_23, s_24, s_25, s_26, s_27, s_28, s_29, s_30, s_31, s_32, s_33, s_34, s_35, s_36, s_37, s_38, s_39, s_40, s_41, s_42, s_43, s_44, s_45, s_46, s_47, s_48, s_49, s_50, s_51, s_52, s_53, s_54, s_55, s_56, s_57, s_58, s_59, s_60, s_61, s_62, s_63, s_64, s_65, s_66, s_67, s_68, s_69, s_70, s_71, s_72, s_73, s_74, s_75, s_76, s_77, s_78, s_79, s_80, s_81, s_82, s_83, s_84, s_85, s_86, s_87, s_88, s_89, s_90, s_91, s_92, s_93, s_94, s_95, s_96, s_97, s_98, s_99, s_100 = BitVecs('s_0 s_1 s_2 s_3 s_4 s_5 s_6 s_7 s_8 s_9 s_10 s_11 s_12 s_13 s_14 s_15 s_16 s_17 s_18 s_19 s_20 s_21 s_22 s_23 s_24 s_25 s_26 s_27 s_28 s_29 s_30 s_31 s_32 s_33 s_34 s_35 s_36 s_37 s_38 s_39 s_40 s_41 s_42 s_43 s_44 s_45 s_46 s_47 s_48 s_49 s_50 s_51 s_52 s_53 s_54 s_55 s_56 s_57 s_58 s_59 s_60 s_61 s_62 s_63 s_64 s_65 s_66 s_67 s_68 s_69 s_70 s_71 s_72 s_73 s_74 s_75 s_76 s_77 s_78 s_79 s_80 s_81 s_82 s_83 s_84 s_85 s_86 s_87 s_88 s_89 s_90 s_91 s_92 s_93 s_94 s_95 s_96 s_97 s_98 s_99 s_100',bits)
 
